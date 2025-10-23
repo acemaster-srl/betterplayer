@@ -3,8 +3,10 @@ import 'package:example/constants.dart';
 import 'package:flutter/material.dart';
 
 class NotificationPlayerPage extends StatefulWidget {
+  const NotificationPlayerPage({super.key});
+
   @override
-  _NotificationPlayerPageState createState() => _NotificationPlayerPageState();
+  State<NotificationPlayerPage> createState() => _NotificationPlayerPageState();
 }
 
 class _NotificationPlayerPageState extends State<NotificationPlayerPage> {

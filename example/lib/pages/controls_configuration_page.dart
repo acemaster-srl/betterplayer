@@ -3,8 +3,10 @@ import 'package:example/constants.dart';
 import 'package:flutter/material.dart';
 
 class ControlsConfigurationPage extends StatefulWidget {
+  const ControlsConfigurationPage({super.key});
+
   @override
-  _ControlsConfigurationPageState createState() =>
+  State<ControlsConfigurationPage> createState() =>
       _ControlsConfigurationPageState();
 }
 

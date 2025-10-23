@@ -3,8 +3,10 @@ import 'package:example/constants.dart';
 import 'package:flutter/material.dart';
 
 class RotationAndFitPage extends StatefulWidget {
+  const RotationAndFitPage({super.key});
+
   @override
-  _RotationAndFitPageState createState() => _RotationAndFitPageState();
+  State<RotationAndFitPage> createState() => _RotationAndFitPageState();
 }
 
 class _RotationAndFitPageState extends State<RotationAndFitPage> {

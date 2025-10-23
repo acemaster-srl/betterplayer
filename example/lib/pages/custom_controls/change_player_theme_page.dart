@@ -4,8 +4,10 @@ import 'package:example/pages/custom_controls/custom_controls_widget.dart';
 import 'package:flutter/material.dart';
 
 class ChangePlayerThemePage extends StatefulWidget {
+  const ChangePlayerThemePage({super.key});
+
   @override
-  _ChangePlayerThemePageState createState() => _ChangePlayerThemePageState();
+  State<ChangePlayerThemePage> createState() => _ChangePlayerThemePageState();
 }
 
 class _ChangePlayerThemePageState extends State<ChangePlayerThemePage> {
@@ -19,7 +21,7 @@ class _ChangePlayerThemePageState extends State<ChangePlayerThemePage> {
     String url = Constants.bugBuckBunnyVideoUrl;
     _dataSource =
         BetterPlayerDataSource(BetterPlayerDataSourceType.network, url);
-    _betterPlayerController = new BetterPlayerController(
+    _betterPlayerController = BetterPlayerController(
       BetterPlayerConfiguration(
         autoDispose: true,
         controlsConfiguration: BetterPlayerControlsConfiguration(
@@ -60,7 +62,7 @@ class _ChangePlayerThemePageState extends State<ChangePlayerThemePage> {
                     setState(() {
                       _playerTheme = BetterPlayerTheme.material;
                       _betterPlayerController.pause();
-                      _betterPlayerController = new BetterPlayerController(
+                      _betterPlayerController = BetterPlayerController(
                         BetterPlayerConfiguration(
                           autoDispose: true,
                           controlsConfiguration:
@@ -79,7 +81,7 @@ class _ChangePlayerThemePageState extends State<ChangePlayerThemePage> {
                     setState(() {
                       _playerTheme = BetterPlayerTheme.cupertino;
                       _betterPlayerController.pause();
-                      _betterPlayerController = new BetterPlayerController(
+                      _betterPlayerController = BetterPlayerController(
                         BetterPlayerConfiguration(
                           autoDispose: true,
                           controlsConfiguration:
@@ -98,7 +100,7 @@ class _ChangePlayerThemePageState extends State<ChangePlayerThemePage> {
                     setState(() {
                       _playerTheme = BetterPlayerTheme.custom;
                       _betterPlayerController.pause();
-                      _betterPlayerController = new BetterPlayerController(
+                      _betterPlayerController = BetterPlayerController(
                         BetterPlayerConfiguration(
                           autoDispose: true,
                           controlsConfiguration:

@@ -3,8 +3,10 @@ import 'package:example/constants.dart';
 import 'package:flutter/material.dart';
 
 class ResolutionsPage extends StatefulWidget {
+  const ResolutionsPage({super.key});
+
   @override
-  _ResolutionsPageState createState() => _ResolutionsPageState();
+  State<ResolutionsPage> createState() => _ResolutionsPageState();
 }
 
 class _ResolutionsPageState extends State<ResolutionsPage> {

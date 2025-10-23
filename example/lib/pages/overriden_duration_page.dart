@@ -3,8 +3,10 @@ import 'package:example/constants.dart';
 import 'package:flutter/material.dart';
 
 class OverriddenDurationPage extends StatefulWidget {
+  const OverriddenDurationPage({super.key});
+
   @override
-  _OverriddenDurationPageState createState() => _OverriddenDurationPageState();
+  State<OverriddenDurationPage> createState() => _OverriddenDurationPageState();
 }
 
 class _OverriddenDurationPageState extends State<OverriddenDurationPage> {

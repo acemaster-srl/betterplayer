@@ -33,8 +33,8 @@ class ReusableVideoListController {
   }
 
   void dispose() {
-    _betterPlayerControllerRegistry.forEach((controller) {
+    for (var controller in _betterPlayerControllerRegistry) {
       controller.dispose();
-    });
+    }
   }
 }

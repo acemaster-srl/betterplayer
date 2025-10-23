@@ -6,13 +6,13 @@ class CustomControlsWidget extends StatefulWidget {
   final Function(bool visbility)? onControlsVisibilityChanged;
 
   const CustomControlsWidget({
-    Key? key,
+    super.key,
     this.controller,
     this.onControlsVisibilityChanged,
-  }) : super(key: key);
+  });
 
   @override
-  _CustomControlsWidgetState createState() => _CustomControlsWidgetState();
+  State<CustomControlsWidget> createState() => _CustomControlsWidgetState();
 }
 
 class _CustomControlsWidgetState extends State<CustomControlsWidget> {
@@ -29,7 +29,7 @@ class _CustomControlsWidgetState extends State<CustomControlsWidget> {
               child: InkWell(
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Colors.purple.withOpacity(0.2),
+                    color: Colors.purple.withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(15),
                   ),
                   child: Padding(
@@ -44,10 +44,11 @@ class _CustomControlsWidgetState extends State<CustomControlsWidget> {
                   ),
                 ),
                 onTap: () => setState(() {
-                  if (widget.controller!.isFullScreen)
+                  if (widget.controller!.isFullScreen) {
                     widget.controller!.exitFullScreen();
-                  else
+                  } else {
                     widget.controller!.enterFullScreen();
+                  }
                 }),
               ),
             ),
@@ -57,7 +58,7 @@ class _CustomControlsWidgetState extends State<CustomControlsWidget> {
             child: Container(
               height: 50,
               decoration: BoxDecoration(
-                color: Colors.purple.withOpacity(0.2),
+                color: Colors.purple.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(15),
               ),
               child: Column(
@@ -94,10 +95,11 @@ class _CustomControlsWidgetState extends State<CustomControlsWidget> {
                       InkWell(
                         onTap: () {
                           setState(() {
-                            if (widget.controller!.isPlaying()!)
+                            if (widget.controller!.isPlaying()!) {
                               widget.controller!.pause();
-                            else
+                            } else {
                               widget.controller!.play();
+                            }
                           });
                         },
                         child: Icon(

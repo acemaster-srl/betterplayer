@@ -3,8 +3,10 @@ import 'package:example/constants.dart';
 import 'package:flutter/material.dart';
 
 class DashPage extends StatefulWidget {
+  const DashPage({super.key});
+
   @override
-  _DashPageState createState() => _DashPageState();
+  State<DashPage> createState() => _DashPageState();
 }
 
 class _DashPageState extends State<DashPage> {

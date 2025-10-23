@@ -3,8 +3,10 @@ import 'package:example/constants.dart';
 import 'package:flutter/material.dart';
 
 class DrmPage extends StatefulWidget {
+  const DrmPage({super.key});
+
   @override
-  _DrmPageState createState() => _DrmPageState();
+  State<DrmPage> createState() => _DrmPageState();
 }
 
 class _DrmPageState extends State<DrmPage> {
@@ -19,7 +21,7 @@ class _DrmPageState extends State<DrmPage> {
       aspectRatio: 16 / 9,
       fit: BoxFit.contain,
     );
-    BetterPlayerDataSource _tokenDataSource = BetterPlayerDataSource(
+    BetterPlayerDataSource tokenDataSource = BetterPlayerDataSource(
       BetterPlayerDataSourceType.network,
       Constants.tokenEncodedHlsUrl,
       videoFormat: BetterPlayerVideoFormat.hls,
@@ -28,10 +30,10 @@ class _DrmPageState extends State<DrmPage> {
           token: Constants.tokenEncodedHlsToken),
     );
     _tokenController = BetterPlayerController(betterPlayerConfiguration);
-    _tokenController.setupDataSource(_tokenDataSource);
+    _tokenController.setupDataSource(tokenDataSource);
 
     _widevineController = BetterPlayerController(betterPlayerConfiguration);
-    BetterPlayerDataSource _widevineDataSource = BetterPlayerDataSource(
+    BetterPlayerDataSource widevineDataSource = BetterPlayerDataSource(
       BetterPlayerDataSourceType.network,
       Constants.widevineVideoUrl,
       drmConfiguration: BetterPlayerDrmConfiguration(
@@ -39,10 +41,10 @@ class _DrmPageState extends State<DrmPage> {
           licenseUrl: Constants.widevineLicenseUrl,
           headers: {"Test": "Test2"}),
     );
-    _widevineController.setupDataSource(_widevineDataSource);
+    _widevineController.setupDataSource(widevineDataSource);
 
     _fairplayController = BetterPlayerController(betterPlayerConfiguration);
-    BetterPlayerDataSource _fairplayDataSource = BetterPlayerDataSource(
+    BetterPlayerDataSource fairplayDataSource = BetterPlayerDataSource(
       BetterPlayerDataSourceType.network,
       Constants.fairplayHlsUrl,
       drmConfiguration: BetterPlayerDrmConfiguration(
@@ -51,7 +53,7 @@ class _DrmPageState extends State<DrmPage> {
         licenseUrl: Constants.fairplayLicenseUrl,
       ),
     );
-    _fairplayController.setupDataSource(_fairplayDataSource);
+    _fairplayController.setupDataSource(fairplayDataSource);
 
     super.initState();
   }

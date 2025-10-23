@@ -3,8 +3,10 @@ import 'package:example/constants.dart';
 import 'package:flutter/material.dart';
 
 class ControlsAlwaysVisiblePage extends StatefulWidget {
+  const ControlsAlwaysVisiblePage({super.key});
+
   @override
-  _ControlsAlwaysVisiblePageState createState() =>
+  State<ControlsAlwaysVisiblePage> createState() =>
       _ControlsAlwaysVisiblePageState();
 }
 

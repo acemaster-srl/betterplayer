@@ -12,14 +12,14 @@ class ReusableVideoListWidget extends StatefulWidget {
   final Function? canBuildVideo;
 
   const ReusableVideoListWidget({
-    Key? key,
+    super.key,
     this.videoListData,
     this.videoListController,
     this.canBuildVideo,
-  }) : super(key: key);
+  });
 
   @override
-  _ReusableVideoListWidgetState createState() =>
+  State<ReusableVideoListWidget> createState() =>
       _ReusableVideoListWidgetState();
 }
 
