@@ -40,13 +40,14 @@ class BetterPlayerAsmsTrack {
   int get hashCode => super.hashCode;
 
   @override
-  bool operator ==(dynamic other) {
-    return other is BetterPlayerAsmsTrack &&
-        width == other.width &&
-        height == other.height &&
-        bitrate == other.bitrate &&
-        frameRate == other.frameRate &&
-        codecs == other.codecs &&
-        mimeType == other.mimeType;
+  bool operator ==(Object other) {
+    return other.runtimeType == runtimeType
+        && other is BetterPlayerAsmsTrack
+        && width == other.width
+        && height == other.height
+        && bitrate == other.bitrate
+        && frameRate == other.frameRate
+        && codecs == other.codecs
+        && mimeType == other.mimeType;
   }
 }

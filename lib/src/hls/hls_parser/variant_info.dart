@@ -27,15 +27,14 @@ class VariantInfo {
   final String? captionGroupId;
 
   @override
-  bool operator ==(dynamic other) {
-    if (other is VariantInfo) {
-      return other.bitrate == bitrate &&
-          other.videoGroupId == videoGroupId &&
-          other.audioGroupId == audioGroupId &&
-          other.subtitleGroupId == subtitleGroupId &&
-          other.captionGroupId == captionGroupId;
-    }
-    return false;
+  bool operator ==(Object other) {
+    return other.runtimeType == runtimeType
+        && other is VariantInfo
+        && other.bitrate == bitrate
+        && other.videoGroupId == videoGroupId
+        && other.audioGroupId == audioGroupId
+        && other.subtitleGroupId == subtitleGroupId
+        && other.captionGroupId == captionGroupId;
   }
 
   @override

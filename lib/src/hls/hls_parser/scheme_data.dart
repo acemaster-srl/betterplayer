@@ -34,16 +34,14 @@ class SchemeData {
       );
 
   @override
-  bool operator ==(dynamic other) {
-    if (other is SchemeData) {
-      return other.mimeType == mimeType &&
-          other.licenseServerUrl == licenseServerUrl &&
-//          other.uuid == uuid &&
-          other.requiresSecureDecryption == requiresSecureDecryption &&
-          other.data == data;
-    }
-
-    return false;
+  bool operator ==(Object other) {
+    return other.runtimeType == runtimeType
+        && other is SchemeData
+        && other.mimeType == mimeType
+        && other.licenseServerUrl == licenseServerUrl
+//      && other.uuid == uuid
+        && other.requiresSecureDecryption == requiresSecureDecryption
+        && other.data == data;
   }
 
   @override

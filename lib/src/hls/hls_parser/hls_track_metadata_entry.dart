@@ -16,14 +16,13 @@ class HlsTrackMetadataEntry {
   final List<VariantInfo>? variantInfos;
 
   @override
-  bool operator ==(dynamic other) {
-    if (other is HlsTrackMetadataEntry) {
-      return other.groupId == groupId &&
-          other.name == name &&
-          const ListEquality<VariantInfo>()
-              .equals(other.variantInfos, variantInfos);
-    }
-    return false;
+  bool operator ==(Object other) {
+    return other.runtimeType == runtimeType
+        && other is HlsTrackMetadataEntry
+        && other.groupId == groupId
+        && other.name == name
+        && const ListEquality<VariantInfo>()
+            .equals(other.variantInfos, variantInfos);
   }
 
   @override
